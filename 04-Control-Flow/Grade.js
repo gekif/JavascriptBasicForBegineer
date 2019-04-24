@@ -14,12 +14,15 @@ console.log(calculateGrade(marks));
 
 
 function calculateGrade(marks) {
-    let sum = 0;
+    /*let sum = 0;
 
     for (let mark of marks)
         sum += mark;
 
-    let average = sum / marks.length;
+    let average = sum / marks.length;*/
+
+    // Call another function
+    const average = calculateAverage(marks);
 
     // First Method
 /*    if (average >= 0 && average <= 59) return 'F';
@@ -34,4 +37,16 @@ function calculateGrade(marks) {
     if (average < 80) return 'C';
     if (average < 90) return 'B';
     return 'A';
+
+}
+
+
+// Reuse Function
+function calculateAverage(array) {
+    let sum = 0;
+
+    for (let value of array)
+        sum += value;
+
+    return sum / array.length;
 }
